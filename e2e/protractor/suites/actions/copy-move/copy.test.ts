@@ -192,7 +192,8 @@ describe('Copy content', () => {
     try {
       await userActions.login(username, username);
       await userActions.unlockNodes([fileLocked1Id, fileLockedInFolderId]);
-      await userActions.deleteNodes([sourceId, destinationIdRF, destinationIdPF, destinationIdSF, destinationIdFav, destinationIdSearch]);
+
+      await apis.nodes.deleteNodesById([sourceId, destinationIdRF, destinationIdPF, destinationIdSF, destinationIdFav, destinationIdSearch]);
       await userActions.deleteSites([siteName]);
     } catch (error) {
       Logger.error(`---- afterAll failed : ${error}`);

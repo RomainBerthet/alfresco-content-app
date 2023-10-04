@@ -59,7 +59,7 @@ describe('Recent Files', () => {
     const id = (await apis.user.nodes.createFiles([fileName3])).entry.id;
 
     await userActions.login(username, username);
-    await userActions.deleteNodes([id], false);
+    await apis.user.nodes.deleteNodeById(id, false);
 
     await apis.user.sites.createSite(siteName, SITE_VISIBILITY.PUBLIC);
     const docLibId = await apis.user.sites.getDocLibId(siteName);
@@ -77,7 +77,7 @@ describe('Recent Files', () => {
 
   afterAll(async () => {
     await userActions.login(username, username);
-    await userActions.deleteNodes([folderId, file2Id]);
+    await apis.user.nodes.deleteNodesById([folderId, file2Id]);
     await userActions.deleteSites([siteName]);
     await userActions.emptyTrashcan();
   });

@@ -71,7 +71,7 @@ describe('Single click on item name', () => {
     deletedFolder1Id = (await apis.user.nodes.createFolder(deletedFolder1)).entry.id;
 
     await userActions.login(username, username);
-    await userActions.deleteNodes([deletedFile1Id, deletedFolder1Id], false);
+    await apis.user.nodes.deleteNodesById([deletedFile1Id, deletedFolder1Id], false);
 
     await loginPage.loginWith(username);
   });
@@ -79,7 +79,7 @@ describe('Single click on item name', () => {
   afterAll(async () => {
     await userActions.login(username, username);
     await userActions.deleteSites([siteName]);
-    await userActions.deleteNodes([folder1Id, file1Id]);
+    await apis.user.nodes.deleteNodesById([folder1Id, file1Id]);
     await userActions.emptyTrashcan();
   });
 

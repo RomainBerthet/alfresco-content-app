@@ -85,7 +85,7 @@ describe('File / folder tooltips', () => {
 
   afterAll(async () => {
     await userActions.login(username, username);
-    await userActions.deleteNodes([parentId]);
+    await apis.user.nodes.deleteNodeById(parentId);
     await userActions.emptyTrashcan();
   });
 
@@ -233,13 +233,14 @@ describe('File / folder tooltips', () => {
         [file1TrashId, file2TrashId, file3TrashId, file4TrashId, file5TrashId, file6TrashId, file7TrashId, file8TrashId],
         false
       );
+      // await apis.user.nodes.
 
       await page.clickTrashAndWait();
     });
 
     afterAll(async () => {
       await userActions.login(username, username);
-      await userActions.deleteNodes([parentForTrashId]);
+      await apis.user.nodes.deleteNodeById(parentForTrashId);
       await userActions.emptyTrashcan();
     });
 

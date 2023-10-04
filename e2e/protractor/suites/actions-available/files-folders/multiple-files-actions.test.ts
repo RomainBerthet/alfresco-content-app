@@ -83,7 +83,7 @@ describe('Multiple Files - available actions : ', () => {
   afterAll(async () => {
     await userActions.login(username, username);
     await userActions.unlockNodes([file1LockedFavId, file2LockedFavId, file3LockedId]);
-    await userActions.deleteNodes([parentId]);
+    await userApi.nodes.deleteNodeById(parentId);
   });
 
   beforeEach(async () => {

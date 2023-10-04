@@ -69,7 +69,7 @@ describe('Office Files - available actions : ', () => {
 
   afterAll(async () => {
     await userActions.login(username, username);
-    await userActions.deleteNodes([parentId]);
+    await userApi.nodes.deleteNodeById(parentId);
     await userActions.emptyTrashcan();
   });
 

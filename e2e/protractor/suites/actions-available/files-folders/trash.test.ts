@@ -54,7 +54,7 @@ describe('Trash - available actions : ', () => {
 
     await userActions.login(username, username);
     const initialDeletedTotalItems = await userActions.getTrashcanSize();
-    await userActions.deleteNodes([fileInTrashId, file2InTrashId, folderInTrashId, folder2InTrashId], false);
+    await userApi.nodes.deleteNodesById([fileInTrashId, file2InTrashId, folderInTrashId, folder2InTrashId], false);
     await userActions.waitForTrashcanSize(initialDeletedTotalItems + 4);
 
     await loginPage.loginWith(username);

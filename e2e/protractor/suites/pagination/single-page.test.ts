@@ -74,7 +74,7 @@ describe('Pagination on single page', () => {
 
   afterAll(async () => {
     await userActions.login(username, username);
-    await userActions.deleteNodes([fileId]);
+    await userApi.nodes.deleteNodeById(fileId);
     await userActions.deleteSites([siteId]);
     await userActions.emptyTrashcan();
   });

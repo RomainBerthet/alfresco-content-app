@@ -123,7 +123,7 @@ describe('Destination picker dialog : ', () => {
 
   afterAll(async () => {
     await userActions.login(username, username);
-    await userActions.deleteNodes([fileId, destinationId]);
+    await userApi.nodes.deleteNodesById([fileId, destinationId]);
     await userActions.deleteSites([site]);
 
     await consumerApi.nodes.deleteNodeById(fileIdConsumer);
@@ -131,7 +131,7 @@ describe('Destination picker dialog : ', () => {
     await collaboratorApi.nodes.deleteNodeById(fileIdCollaborator);
 
     await adminApiActions.login();
-    await adminApiActions.deleteNodes([adminFolderId]);
+    await userApi.nodes.deleteNodeById(adminFolderId);
   });
 
   afterEach(async () => {
