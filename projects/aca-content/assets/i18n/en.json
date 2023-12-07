@@ -259,8 +259,7 @@
             "LEAVE": "Leave Library",
             "EDIT_OFFLINE": "Edit Offline",
             "EDIT_OFFLINE_CANCEL": "Cancel Editing",
-            "CHANGE_ASPECT": "Edit Aspects",
-            "CLOSE": "Close"
+            "CHANGE_ASPECT": "Edit Aspects"
         },
         "DIALOGS": {
             "CONFIRM_PURGE": {
