@@ -405,7 +405,7 @@ export class NodesApi {
   async getNodeProperty(nodeId: string, property: string): Promise<string> {
     try {
       const node = await this.getNodeById(nodeId);
-      return (node.entry.properties && node.entry.properties[property]) || '';
+      return node.entry.properties?.[property] || '';
     } catch (error) {
       console.error(`${this.constructor.name} ${this.getNodeProperty.name}`, error);
       return '';
